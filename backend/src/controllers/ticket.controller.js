@@ -1,6 +1,6 @@
-const { message } = require("statuses");
 const ticketService = require("../services/ticket.service");
-const createTicket  = async (req,res) => {    // Create Ticket function with error handling
+
+const createTicket = async (req, res) => {
     try {
         const ticket = await ticketService.createTicket(req.body);
 
@@ -8,10 +8,10 @@ const createTicket  = async (req,res) => {    // Create Ticket function with err
             ticket_Id: ticket.ticketId,
             created_at: ticket.createdAt,
         });
-    } catch (error){
+    } catch (error) {
         res.status(500).json({
             message: "Failed to create ticket",
-            error:error.message,
+            error: error.message,
         });
     }
 };
@@ -50,9 +50,10 @@ const getTicketbyID = async (req,res)=>{
        res.status(200).json({
         ticket_id: ticket.ticketId,
         customer_name: ticket.customerName,
-        customer_email: ticket.customer_email,
+        customer_email: ticket.customerEmail,
         subject: ticket.subject,
         description: ticket.description,
+        order_id: ticket.orderId,
         status: ticket.status,
         created_at: ticket.createdAt,
         updated_at: ticket.updated_at,
@@ -79,9 +80,9 @@ const updateTicket = async (req,res) => {
        ) ;
 
        res.status(200).json({
-        success:true,
-        updated_at: updatedTicket.updatedAt,
-        note: updatedTicket.notes || "No notes added"   
+        success: true,
+        message: "Ticket updated successfully",
+        updated_at: updatedTicket.updatedAt
        });
     
     } catch (error){

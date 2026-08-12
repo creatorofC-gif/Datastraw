@@ -30,6 +30,12 @@ const ticketSchema = new mongoose.Schema(     //Ticket Database Schema
             required:true,
             trim: true,
         },
+
+        orderId: {
+            type: String,
+            trim: true,
+            default: null
+        },
         
         status: {
             type:String,
