@@ -2,13 +2,28 @@ const ticketService = require("../services/ticket.service");
 
 const createTicket = async (req, res) => {
     try {
-        const ticket = await ticketService.createTicket(req.body);
+        const payload = {
+            customerName: req.body.customerName || req.body.customer_name,
+            customerEmail: req.body.customerEmail || req.body.customer_email,
+            subject: req.body.subject,
+            description: req.body.description,
+            orderId: req.body.orderId || req.body.order_id || null,
+        };
+
+        if (!payload.customerName || !payload.customerEmail || !payload.subject || !payload.description) {
+            return res.status(400).json({
+                message: "Missing required fields. 'customerName', 'customerEmail', 'subject', and 'description' are required."
+            });
+        }
+
+        const ticket = await ticketService.createTicket(payload);
 
         res.status(201).json({
             ticket_Id: ticket.ticketId,
             created_at: ticket.createdAt,
         });
     } catch (error) {
+        console.error("Create ticket error:", error);
         res.status(500).json({
             message: "Failed to create ticket",
             error: error.message,
