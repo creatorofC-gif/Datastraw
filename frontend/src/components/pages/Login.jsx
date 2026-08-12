@@ -86,14 +86,6 @@ export default function Login() {
               {error && <p className="text-error font-body-md text-sm mt-2">{error}</p>}
             </div>
 
-            {/* Remember Me */}
-            <div className="flex items-center pt-stack-sm">
-              <input type="checkbox" id="remember-me" className="h-4 w-4 text-primary focus:ring-primary border-outline-variant rounded rounded-sm bg-surface-bright" />
-              <label htmlFor="remember-me" className="ml-2 block font-body-md text-body-md text-on-surface-variant">
-                Remember me on this device
-              </label>
-            </div>
-
             {/* Submit Button */}
             <div className="pt-stack-sm">
               <button type="submit" className="w-full flex justify-center py-2.5 px-4 border border-transparent rounded-lg shadow-sm font-label-md text-label-md text-on-primary bg-primary-container hover:bg-primary focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-primary transition-colors">

@@ -1,7 +1,8 @@
 import axios from 'axios';
 
-const API_URL = 'http://localhost:5000/api/tickets';
-const AUTH_URL = 'http://localhost:5000/api/auth';
+const BASE_URL = import.meta.env.VITE_API_URL || 'http://localhost:5000';
+const API_URL = `${BASE_URL}/api/tickets`;
+const AUTH_URL = `${BASE_URL}/api/auth`;
 
 // Axios Interceptor to handle invalid/expired tokens automatically
 axios.interceptors.response.use(
