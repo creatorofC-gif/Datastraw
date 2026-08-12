@@ -7,13 +7,13 @@ const connectDB = async () => {
     return;
   }
 
+  const mongoUri = process.env.MONGODB_URI;
+  if (!mongoUri) {
+    throw new Error("MONGODB_URI environment variable is not defined.");
+  }
+
   try {
-    const mongoUri = process.env.MONGODB_URI;
-    if (!mongoUri) {
-      console.warn("MONGODB_URI is not set in environment variables. Falling back to local database.");
-    }
-    
-    const db = await mongoose.connect(mongoUri || 'mongodb://localhost:27017/support-crm', {
+    const db = await mongoose.connect(mongoUri, {
       serverSelectionTimeoutMS: 5000,
     });
     
