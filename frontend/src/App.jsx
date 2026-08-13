@@ -36,7 +36,7 @@ const TopbarLayout = ({ children }) => {
   return (
     <div style={{ minHeight: '100vh', background: '#f1f5f9', fontFamily: 'Inter, sans-serif' }}>
 
-      {/* ===== TOP NAVIGATION BAR ===== */}
+      {/* Top Navigation Bar*/}
       <header style={{
         background: '#fff',
         borderBottom: '1px solid #e2e8f0',
@@ -126,7 +126,7 @@ const TopbarLayout = ({ children }) => {
         </div>
       </header>
 
-      {/* ===== PAGE CONTENT ===== */}
+      {/* Page Content */}
       <main style={{ maxWidth: '1280px', margin: '0 auto', padding: '24px 16px' }}>
         {children}
       </main>

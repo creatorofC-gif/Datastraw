@@ -1,3 +1,9 @@
+/**
+ * This is the Login Page which contains the logo of Datastraw and the login form.
+ * It is used to authenticate the admin user.
+ */
+
+
 import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { loginAdmin } from '../../services/ticketApi';

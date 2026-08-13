@@ -1,3 +1,8 @@
+/**
+ * Page to create the tickets
+ */
+
+
 import React, { useState } from "react";
 import { useNavigate, Link } from 'react-router-dom';
 import { createTicket } from "../../services/ticketApi";

@@ -1,3 +1,9 @@
+/**
+ * Dashboard and main page
+ * This page is used to display the tickets in a list format.
+ */
+
+
 import React, { useState, useEffect } from "react";
 import { useNavigate, useSearchParams } from "react-router-dom";
 import { getTickets } from '../../services/ticketApi';

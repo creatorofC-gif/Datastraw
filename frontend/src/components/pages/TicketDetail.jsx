@@ -1,3 +1,9 @@
+/**
+ * Ticket Detail Page
+ * This page is used to view the details of a ticket.
+ */
+
+
 import React, { useState, useEffect } from 'react';
 import { useParams, Link } from 'react-router-dom';
 import { getTicketById, updateTicket } from '../../services/ticketApi';
@@ -130,7 +136,7 @@ export default function TicketDetail() {
           {/* Scrollable Thread */}
           <div className="flex-1 overflow-y-auto p-6 space-y-6 bg-surface-container/10">
 
-            {/* Customer Message (Original Description) */}
+            {/* Customer Message */}
             <div className="flex gap-4">
               <div className="shrink-0 mt-1">
                 <div className="w-10 h-10 rounded-full bg-secondary-container text-on-secondary-container flex items-center justify-center font-label-sm text-label-sm font-bold">
