@@ -1,3 +1,5 @@
+//Route of the Tickets dashboard is defined here
+
 const express = require('express');
 const router = express.Router();
 const ticketController = require("../controllers/ticket.controller")
