@@ -4,7 +4,8 @@
 
 > A web application for managing customer support tickets. Core functionality: Create tickets with 
 
-### 🏠 [Homepage](customer info, search/filter, update status, and view details.)
+###  A web application for managing customer support tickets. Core functionality: Create tickets with 
+customer info, search/filter, update status, and view details.
 
 ### ✨ [Demo](https://datastraw-frontend.vercel.app/)
 
@@ -20,4 +21,3 @@
 Give a ⭐️ if this project helped you!
 
 ***
-_This README was generated with ❤️ by [readme-md-generator](https://github.com/kefranabg/readme-md-generator)_
