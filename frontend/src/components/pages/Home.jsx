@@ -11,18 +11,19 @@ import { getTickets } from '../../services/ticketApi';
 export default function Home() {
     const [tickets, setTickets] = useState([]);
     const [loading, setloading] = useState(true);
+    const [statusFilter, setStatusFilter] = useState('');
     const [searchParams] = useSearchParams();
     const navigate = useNavigate();
     const searchQuery = searchParams.get('search') || '';
 
     useEffect(() => {
         fetchTickets();
-    }, [searchQuery]);
+    }, [searchQuery, statusFilter]);
 
     const fetchTickets = async () => {
         setloading(true);
         try {
-            const data = await getTickets({ search: searchQuery, status: '' });
+            const data = await getTickets({ search: searchQuery, status: statusFilter });
             setTickets(data);
         } catch (err) {
             console.log(err);
@@ -139,6 +140,25 @@ export default function Home() {
                 {/* Table Header */}
                 <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', padding: '16px 20px', borderBottom: '1px solid #f1f5f9' }}>
                     <h3 style={{ margin: 0, fontSize: '15px', fontWeight: 600, color: '#0f172a' }}>Recent Tickets</h3>
+                    <select
+                        value={statusFilter}
+                        onChange={(e) => setStatusFilter(e.target.value)}
+                        style={{
+                            padding: '6px 12px',
+                            border: '1px solid #cbd5e1',
+                            borderRadius: '8px',
+                            fontSize: '13px',
+                            color: '#334155',
+                            outline: 'none',
+                            background: '#f8fafc',
+                            cursor: 'pointer'
+                        }}
+                    >
+                        <option value="">All Statuses</option>
+                        <option value="Open">Open</option>
+                        <option value="In Progress">In Progress</option>
+                        <option value="Closed">Closed</option>
+                    </select>
                 </div>
 
                 <div style={{ overflowX: 'auto' }}>
