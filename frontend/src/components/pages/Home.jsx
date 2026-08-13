@@ -55,20 +55,22 @@ export default function Home() {
             `"${t.status}"`,
             `"${new Date(t.created_at).toLocaleDateString()}"`
         ]);
-        const csvContent = "data:text/csv;charset=utf-8," + [headers.join(","), ...rows.map(r => r.join(","))].join("\n");
-        const encodedUri = encodeURI(csvContent);
+        const csvString = [headers.join(","), ...rows.map(r => r.join(","))].join("\n");
+        const blob = new Blob([csvString], { type: 'text/csv;charset=utf-8;' });
+        const url = URL.createObjectURL(blob);
         const link = document.createElement("a");
-        link.setAttribute("href", encodedUri);
+        link.setAttribute("href", url);
         link.setAttribute("download", `datastraw_tickets_${new Date().toISOString().split('T')[0]}.csv`);
         document.body.appendChild(link);
         link.click();
         document.body.removeChild(link);
+        URL.revokeObjectURL(url);
     };
 
     return (
         <div style={{ fontFamily: 'Inter, sans-serif', color: '#1e293b' }}>
             {/* Page Header */}
-            <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start', marginBottom: '24px' }}>
+            <div style={{ display: 'flex', flexWrap: 'wrap', justifyContent: 'space-between', alignItems: 'flex-start', gap: '16px', marginBottom: '24px' }}>
                 <div>
                     <h1 style={{ fontSize: '28px', fontWeight: 700, color: '#0f172a', margin: 0, fontFamily: 'Hanken Grotesk, sans-serif' }}>
                         Ticket Overview
@@ -84,7 +86,7 @@ export default function Home() {
                         padding: '6px 12px', borderRadius: '8px', fontSize: '13px', fontWeight: 500
                     }}>
                         <span className="material-symbols-outlined" style={{ fontSize: '18px', color: '#10b981' }}>download</span>
-                        Export CSV
+                        Download Ticket List
                     </button>
 
                     <button onClick={fetchTickets} title="Refresh" style={{

@@ -98,7 +98,7 @@ export default function TicketDetail() {
     <div className="flex flex-col h-full bg-surface animate-in fade-in duration-500">
 
       {/* Ticket Header Area */}
-      <div className="flex justify-between items-start mb-6 shrink-0">
+      <div className="flex flex-wrap justify-between items-start gap-4 mb-6 shrink-0">
         <div>
           <div className="flex items-center gap-3 mb-2">
             <Link to="/" className="text-secondary hover:text-primary transition-colors flex items-center mr-2">
