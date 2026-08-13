@@ -1,3 +1,10 @@
+/**
+ * This is the Mongoose Setup for local testing initially
+ * Now it is changed according to the MongoDB Atlas Configurations
+ * All details will be given in the .env.example
+ */
+
+
 const mongoose = require("mongoose");
 
 let isConnected = false;
