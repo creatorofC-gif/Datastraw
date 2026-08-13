@@ -1,6 +1,14 @@
 const ticketService = require("../services/ticket.service");
+/**
+ *  This defines the payload for creating a ticket, extracting necessary fields from the request body. 
+ * It also includes validation to ensure that all required fields are present before proceeding to create the ticket using the ticketService. 
+ * If any required fields are missing, it responds with a 400 status code and an error message. 
+ * If the ticket creation is successful, it responds with a 201 status code and the ticket ID along with the creation timestamp. 
+ * In case of any errors during the process, it logs the error and responds with a 500 status code and an error message. 
+ */
 
 const createTicket = async (req, res) => {
+
     try {
         const payload = {
             customerName: req.body.customerName || req.body.customer_name,
@@ -31,6 +39,8 @@ const createTicket = async (req, res) => {
     }
 };
 
+// This function fetches all tickets based on optional status and search parameters.
+
 const getTicket  = async (req,res) =>{
 try{
     const {status, search} = req.query;
@@ -56,6 +66,7 @@ try{
 }
 }
 
+// This function fetches a ticket by its ID and includes associated notes.
 
 const getTicketbyID = async (req,res)=>{
     try{
@@ -86,6 +97,8 @@ const getTicketbyID = async (req,res)=>{
     }
 }   
 
+//This function updates a ticket based on the provided ticket ID and request body
+
 const updateTicket = async (req,res) => {
     try{
        const {ticketId} = req.params;
@@ -106,6 +119,7 @@ const updateTicket = async (req,res) => {
         })  
     }
 }
+
 // Export the controller function for use in routes
 module.exports = {  
     createTicket,
