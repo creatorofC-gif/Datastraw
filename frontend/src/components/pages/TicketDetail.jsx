@@ -1,7 +1,4 @@
-/**
- * Ticket Detail Page
- * This page is used to view the details of a ticket.
- */
+// Ticket details view.
 
 
 import React, { useState, useEffect } from 'react';

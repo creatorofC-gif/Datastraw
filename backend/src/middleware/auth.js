@@ -1,10 +1,4 @@
-/**
- * This is the middleware of the authentication
- * After the controller the power is shifted here
- * The bearer token is generated which is the unique ID of the person which is logged in
- * Using that bearer token, the said developer can also access the data using softwares like Postman or ThunderClient
- * On entering the wrong bearer token, appropriate message is shown
- */
+// Middleware to verify JWT Bearer token and protect routes.
 
 
 const jwt = require('jsonwebtoken');

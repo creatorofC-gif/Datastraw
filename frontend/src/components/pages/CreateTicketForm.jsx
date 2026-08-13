@@ -1,6 +1,4 @@
-/**
- * Page to create the tickets
- */
+// Ticket creation page.
 
 
 import React, { useState } from "react";

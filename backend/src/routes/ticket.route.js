@@ -1,4 +1,4 @@
-//Route of the Tickets dashboard is defined here
+// Ticket routes.
 
 const express = require('express');
 const router = express.Router();

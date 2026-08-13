@@ -1,9 +1,4 @@
-/**
- * This is the Schema definition of the notes section of the Ticket
- * There are two namely 
-    1)ticket which will be grabbed as per the ID
-    2) noteText which will have the notes
- */
+// Mongoose schema for ticket notes.
 
 
 const mongoose = require("mongoose");

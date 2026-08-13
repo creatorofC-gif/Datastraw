@@ -1,10 +1,4 @@
-/**
- * This service module holds the main logic for creating the tickets. It has main 4 functions
- * 1)createTicket which creates the tickets
- * 2)getTicket which fetches the tickets in the dashboard
- * 3) getTicketbyID which fetches the ticket details on clicking a particular ticket 
- * 4) updateTicket which updates the ticket in the ticket details
- */
+// Service functions for ticket CRUD operations.
 
 const Ticket = require("../models/Ticket");
 const Note = require("../models/Note");

@@ -1,7 +1,4 @@
-/**
- * This is the Schema definition of the Main Ticket section of the Ticket.
- * This contains all the required  fields of the ticket section 
- */
+// Mongoose schema for tickets.
 
 
 const mongoose = require('mongoose');    

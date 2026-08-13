@@ -1,4 +1,4 @@
-// The Route of the authentication is defined in this file
+// Authentication routes.
 
 
 const express = require('express');

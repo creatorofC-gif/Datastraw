@@ -1,9 +1,4 @@
-/**
- * This module handles user authentication, specifically the login functionality for the admin user.
- * It verifies the provided credentials against the stored admin password and issues a JWT token upon successful authentication.
- * The token is valid for 12 hours and is signed using a secret key defined in the environment variables.
- * If the credentials are invalid or if there are any server configuration issues, appropriate error responses are returned.
- */
+// Handles admin login and issues a 12-hour JWT token.
 
 const jwt = require('jsonwebtoken');
 

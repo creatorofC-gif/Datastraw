@@ -1,6 +1,4 @@
-/**
- * This module generates ticket ID by generating a random number preceded by a standard convention TKT 
- */
+// Generates a random ticket ID formatted as TKT-XXXXXX.
 
 const generateTicketId = () =>{
     const randomNumber = Math.floor(100000 + Math.random() * 900000);

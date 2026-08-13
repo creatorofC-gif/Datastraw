@@ -1,7 +1,4 @@
-/**
- * Dashboard and main page
- * This page is used to display the tickets in a list format.
- */
+// Dashboard page displaying the ticket list.
 
 
 import React, { useState, useEffect } from "react";

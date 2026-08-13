@@ -1,7 +1,4 @@
-/**
- * This is the Login Page which contains the logo of Datastraw and the login form.
- * It is used to authenticate the admin user.
- */
+// Login page for admin authentication.
 
 
 import React, { useState, useEffect } from 'react';
