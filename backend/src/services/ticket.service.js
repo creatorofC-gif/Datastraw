@@ -1,8 +1,16 @@
+/**
+ * This service module holds the main logic for creating the tickets. It has main 4 functions
+ * 1)createTicket which creates the tickets
+ * 2)getTicket which fetches the tickets in the dashboard
+ * 3) getTicketbyID which fetches the ticket details on clicking a particular ticket 
+ * 4) updateTicket which updates the ticket in the ticket details
+ */
+
 const Ticket = require("../models/Ticket");
 const Note = require("../models/Note");
 const generateTicketId = require("../utils/generateTicketId");
 
-const createTicket = async(ticketData) =>{      //Creates the Tickets
+const createTicket = async(ticketData) =>{      
     let ticketId;
     let ticketExists;
 
@@ -20,10 +28,10 @@ const createTicket = async(ticketData) =>{      //Creates the Tickets
     return ticket;
 };
 
-const getTicket = async({status,search})=>{      //Fetches the tickets
+const getTicket = async({status,search})=>{     
     const filter = {};
 
-    if(status){                   // Filtering by Status
+    if(status){                 
         filter.status = status;
     }
 
@@ -44,7 +52,7 @@ const getTicket = async({status,search})=>{      //Fetches the tickets
     return tickets
 }
 
-const getTicketbyID = async(ticketId) =>{       //Gets ticket by ID and notes 
+const getTicketbyID = async(ticketId) =>{      
     
     const ticket = await Ticket.findOne({ticketId});
 
@@ -59,7 +67,7 @@ const getTicketbyID = async(ticketId) =>{       //Gets ticket by ID and notes
     return {ticket,notes};
 }
 
-const updateTicket = async(ticketId, updatedData = {}) => {     //Update the ticket Status and notes
+const updateTicket = async(ticketId, updatedData = {}) => {    
     const {status, notes} = updatedData;
     const ticket = await Ticket.findOne({ticketId});
 
