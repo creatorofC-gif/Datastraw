@@ -1,5 +1,11 @@
+/**
+ * This is the Schema definition of the Main Ticket section of the Ticket.
+ * This contains all the required  fields of the ticket section 
+ */
+
+
 const mongoose = require('mongoose');    
-const ticketSchema = new mongoose.Schema(     //Ticket Database Schema
+const ticketSchema = new mongoose.Schema(   
     {
         ticketId: {
             type: String,   

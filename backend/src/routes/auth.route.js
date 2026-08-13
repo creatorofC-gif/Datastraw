@@ -1,3 +1,6 @@
+// The Route of the authentication is defined in this file
+
+
 const express = require('express');
 const router = express.Router();
 const authController = require('../controllers/auth.controller');

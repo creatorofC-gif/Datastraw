@@ -1,3 +1,8 @@
+/**
+ * This is the main module of running the code.
+ * Configured according to the .env file which will be submitted as well
+ */
+
 const express = require("express");
 const cors = require("cors");
 const ticketRoutes = require("./routes/ticket.route");
